@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import { useState } from 'react';
-import logo from '../../public/stormtrooper.png'
+import logo from '../../public/code.png'
 
 
 export const Navbar = () => {
@@ -53,22 +53,22 @@ export const Navbar = () => {
         >
           <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-zinc-700 hover:text-white '>
+              <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white '>
                 Home
               </a>
             </Link>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-zinc-700 hover:text-white'>
+              <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
                 Services
               </a>
             </Link>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-zinc-700 hover:text-white'>
+              <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
                 About us
               </a>
             </Link>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-zinc-700 hover:text-white'>
+              <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
                 Contact us
               </a>
             </Link>

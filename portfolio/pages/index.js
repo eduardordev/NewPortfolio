@@ -53,19 +53,20 @@ export default function Home({data}) {
 
   console.log(data)
   return (
-    <body className="bg-black w-full h-full px-20">
-      <div>
+    <body className="bg-black w-full h-full px-20 ">
+      <div className="justify-center items-center flex flex-row">
         <Head>
           <title>Home | eduardordev</title>
           <meta name="description" content="eduardordev Blog & Portfolio" />
-          <link rel="icon" href="/e.png" />
+          <link rel="icon" href="/code.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet"/>
         </Head>
         <Navbar />
+      </div>
+      <div className="justify-center items-center flex flex-col">
         <Profile />
-        
       </div>
     </body>
   )
