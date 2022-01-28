@@ -1,49 +1,12 @@
-import { gql, GraphQLClient } from 'graphql-request'
 import Head from 'next/head'
+import Link from 'next/link'
+import { getPostsAndPortfolio } from '../lib/data'
 import { Navbar } from './components/navbar'
 import { Profile } from './components/profile'
-import { Portfolios } from './components/portfolios'
-import { Posts } from './components/posts'
 
 export const getStaticProps = async () =>{
 
-  const endpoint = process.env.GRAPHCMS_PROJECT_API
-  const graphQLClient = new GraphQLClient(endpoint);
-  const query = gql`
-    {
-      portfolios{
-        title
-        tags
-        slug
-        description
-        date
-        coverImage{
-          url
-          width
-          height
-        }
-      }
-      posts{
-        title
-        slug
-        description
-        date
-        id
-        tags
-        author{
-          name
-          image{
-            url
-            width
-            height
-          }
-        }
-      }
-    }
-  `
-
-  const data = await graphQLClient.request(query)
-
+  const data = await getPostsAndPortfolio()
   return{
     props: {
       data,
@@ -71,8 +34,31 @@ export default function Home({data}) {
         <Profile />
       </div>
       <hr className="w-full border-zinc-700 my-4 rounded-xl"/>
-      <div className="w-full bg-zinc-900 justify-center items-center flex flex-row my-8">
-        
+      <div className="w-full justify-center items-center flex flex-row my-8">
+        <div className="w-1/2 justify-center items-center flex flex-col ">
+          <h1 className="text-4xl text-white font-montserrat mb-8">Blog</h1>
+          <div>
+            {data?.posts?.map((item)=>(
+              <div key={item.slug}>
+                <Link href={`/blog/${item.slug}`}>
+                  <a className="text-base text-white font-montserrat">{item.title}</a>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-1/2  justify-center items-center flex flex-col ">
+          <h1 className="text-4xl text-white font-montserrat mb-8">Portfolio</h1>
+           <div>
+            {data?.portfolios?.map((item)=>(
+              <div key={item.slug}>
+                <Link href={`/portfolio/${item.slug}`}>
+                  <a className="text-base text-white font-montserrat">{item.title}</a>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </body>
   )

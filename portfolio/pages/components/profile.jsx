@@ -13,7 +13,7 @@ export const Profile = () => {
                 />
             </div>
             <div className="w-1/2  flex flex-col ">
-                <h1 className="text-3xl font-bold text-white font-montserrat">
+                <h1 className="text-3xl text-white font-montserrat">
                 Eduardo Ramírez
                 </h1>
                 <h2 className="text-white font-work-sans font-normal text-sm text-justify">Web Developer | UX/UI Design | Computer Science Student</h2>

@@ -59,17 +59,17 @@ export const Navbar = () => {
             </Link>
             <Link href='/'>
               <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
-                Services
+                Portfolio
               </a>
             </Link>
             <Link href='/'>
               <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
-                About us
+                Blog
               </a>
             </Link>
             <Link href='/'>
               <a className='font-work-sans lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white ease-in duration-500 items-center justify-center hover:bg-zinc-700 hover:text-white'>
-                Contact us
+                About Me
               </a>
             </Link>
           </div>
