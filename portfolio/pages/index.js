@@ -2,6 +2,8 @@ import { gql, GraphQLClient } from 'graphql-request'
 import Head from 'next/head'
 import { Navbar } from './components/navbar'
 import { Profile } from './components/profile'
+import { Portfolios } from './components/portfolios'
+import { Posts } from './components/posts'
 
 export const getStaticProps = async () =>{
 
@@ -67,6 +69,10 @@ export default function Home({data}) {
       </div>
       <div className="justify-center items-center flex flex-col">
         <Profile />
+      </div>
+      <hr className="w-full border-zinc-700 my-4 rounded-xl"/>
+      <div className="w-full bg-zinc-900 justify-center items-center flex flex-row my-8">
+        
       </div>
     </body>
   )
