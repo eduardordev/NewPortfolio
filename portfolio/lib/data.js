@@ -1,32 +1,32 @@
-import { gql, GraphQLClient } from 'graphql-request'
+import { gql, GraphQLClient } from "graphql-request";
 
-export const getPostsAndPortfolio = async () =>{
-  const endpoint = process.env.GRAPHCMS_PROJECT_API
+export const getPostsAndPortfolio = async () => {
+  const endpoint = process.env.GRAPHCMS_PROJECT_API;
   const graphQLClient = new GraphQLClient(endpoint);
   const query = gql`
     {
-      portfolios{
+      portfolios {
         title
         tags
         slug
         description
         date
-        coverImage{
+        coverImage {
           url
           width
           height
         }
       }
-      posts{
+      posts {
         title
         slug
         description
         date
         id
         tags
-        author{
+        author {
           name
-          image{
+          image {
             url
             width
             height
@@ -36,5 +36,5 @@ export const getPostsAndPortfolio = async () =>{
     }
   `;
 
-  return await graphQLClient.request(query)
-}
+  return await graphQLClient.request(query);
+};
