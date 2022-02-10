@@ -43,15 +43,26 @@ export default function Home({ data }) {
           <div>
             {data?.portfolios?.map((item) => (
               <div key={item.slug}>
-                <Link href={`/portfolio/${item.slug}`}>
-                  <a className="text-base text-white font-montserrat">{item.title}</a>
-                </Link>
                 <Image
+                  href={`/portfolio/${item.slug}`}
                   className="rounded-lg"
                   src={item.coverImage.url}
                   width={item.coverImage.width}
                   height={item.coverImage.height}
                 />
+                <Link href={`/portfolio/${item.slug}`}>
+                  <a className="text-base text-white font-montserrat">{item.title}</a>
+                </Link>
+                <Link href={`/portfolio/${item.slug}`}>
+                  <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
+                    {item.date}
+                  </a>
+                </Link>
+                <Link href={`/portfolio/${item.slug}`}>
+                  <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
+                    {item.description}
+                  </a>
+                </Link>
               </div>
             ))}
           </div>
