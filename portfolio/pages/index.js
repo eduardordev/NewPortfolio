@@ -16,10 +16,6 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ data }) {
-  console.log(data);
-
-  data?.portfolios?.map((item) => console.log(item.tags));
-
   return (
     <body className="bg-black w-full h-full px-20 ">
       <div className="justify-center items-center flex flex-row">
@@ -41,7 +37,7 @@ export default function Home({ data }) {
       </div>
       <hr className="w-full border-zinc-700 my-4 rounded-xl" />
       <div className="w-full justify-center items-center flex flex-row my-8">
-        <div className="w-1/2  justify-center items-center flex flex-col ">
+        <div className="w-1/2  justify-center items-center flex flex-col">
           <h1 className="text-4xl text-white font-montserrat mb-8">Portfolio</h1>
           <div>
             {data?.portfolios?.map((item) => (
@@ -55,7 +51,7 @@ export default function Home({ data }) {
                 />
                 <div className="justify-center  flex flex-col">
                   <Link href={`/portfolio/${item.slug}`}>
-                    <a className="text-base text-white font-montserrat">{item.title}</a>
+                    <a className="text-2xl text-white font-montserrat mt-3 mb-2">{item.title}</a>
                   </Link>
                   <Link href={`/portfolio/${item.slug}`}>
                     <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
@@ -63,18 +59,19 @@ export default function Home({ data }) {
                     </a>
                   </Link>
                   <Link href={`/portfolio/${item.slug}`}>
-                    <a className=" font-work-sans font-normal text-sm  text-justify">
+                    <a className=" font-work-sans font-normal text-sm  text-justify my-3">
                       {item.tags.map((tag, index) => {
                         return (
-                          <a className="text-sky-400 bg-sky-900 mr-2 rounded p-1" key={index}>
-                            {item.tags[index]}{" "}
+                          <a className="text-sky-400 bg-sky-900 mr-2 rounded p-1 px-2" key={index}>
+                            {item.tags[index]}
+                            {""}
                           </a>
                         );
                       })}
                     </a>
                   </Link>
                   <Link href={`/portfolio/${item.slug}`}>
-                    <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
+                    <a className="text-zinc-400 font-work-sans font-normal text-base text-justify mt-2">
                       {item.description}
                     </a>
                   </Link>
