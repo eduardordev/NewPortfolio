@@ -17,6 +17,9 @@ export const getStaticProps = async () => {
 
 export default function Home({ data }) {
   console.log(data);
+
+  data?.portfolios?.map((item) => console.log(item.tags));
+
   return (
     <body className="bg-black w-full h-full px-20 ">
       <div className="justify-center items-center flex flex-row">
@@ -50,19 +53,32 @@ export default function Home({ data }) {
                   width={item.coverImage.width}
                   height={item.coverImage.height}
                 />
-                <Link href={`/portfolio/${item.slug}`}>
-                  <a className="text-base text-white font-montserrat">{item.title}</a>
-                </Link>
-                <Link href={`/portfolio/${item.slug}`}>
-                  <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
-                    {item.date}
-                  </a>
-                </Link>
-                <Link href={`/portfolio/${item.slug}`}>
-                  <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
-                    {item.description}
-                  </a>
-                </Link>
+                <div className="justify-center  flex flex-col">
+                  <Link href={`/portfolio/${item.slug}`}>
+                    <a className="text-base text-white font-montserrat">{item.title}</a>
+                  </Link>
+                  <Link href={`/portfolio/${item.slug}`}>
+                    <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
+                      {item.date}
+                    </a>
+                  </Link>
+                  <Link href={`/portfolio/${item.slug}`}>
+                    <a className=" font-work-sans font-normal text-sm  text-justify">
+                      {item.tags.map((tag, index) => {
+                        return (
+                          <a className="text-sky-400 bg-sky-900 mr-2 rounded p-1" key={index}>
+                            {item.tags[index]}{" "}
+                          </a>
+                        );
+                      })}
+                    </a>
+                  </Link>
+                  <Link href={`/portfolio/${item.slug}`}>
+                    <a className="text-zinc-400 font-work-sans font-normal text-base text-justify">
+                      {item.description}
+                    </a>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
