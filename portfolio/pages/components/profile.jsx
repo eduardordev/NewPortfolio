@@ -6,7 +6,7 @@ export const Profile = () => {
   return (
     <div className="w-3/5 h-full p-4  justify-center items-center flex flex-row">
       <div className="w-1/2 flex">
-        <Image src={mypic} className="rounded-full" width="200px" height="200px" />
+        <Image src={mypic} className="rounded-full z-10" width="200px" height="200px" />
       </div>
       <div className="w-1/2  flex flex-col ">
         <h1 className="text-3xl text-white font-montserrat">Eduardo Ramírez</h1>

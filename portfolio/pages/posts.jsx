@@ -4,7 +4,6 @@ import Link from "next/link";
 
 import { getPostsAndPortfolio } from "../lib/data";
 import { Navbar } from "./components/navbar";
-import { Profile } from "./components/profile";
 
 export const getStaticProps = async () => {
   const data = await getPostsAndPortfolio();
@@ -15,12 +14,12 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ data }) {
+export default function MyPosts({ data }) {
   return (
     <body className="bg-black w-full h-full px-20 ">
       <div className="justify-center items-center sticky top-0 z-40">
         <Head>
-          <title>Home | eduardordev</title>
+          <title>Posts | eduardordev</title>
           <meta name="description" content="eduardordev Blog & Portfolio" />
           <link rel="icon" href="/code.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,13 +31,11 @@ export default function Home({ data }) {
         </Head>
         <Navbar />
       </div>
-      <div className="justify-center items-center flex flex-col">
-        <Profile />
-      </div>
-      <hr className="w-full border-zinc-700 my-4 rounded-xl" />
-      <div className="w-full justify-center items-center flex flex-row my-8">
-        <div className="w-1/2  justify-center items-center flex flex-col">
-          <h1 className="text-4xl text-white font-montserrat mb-8">Portfolio</h1>
+
+      <div className="w-full  flex flex-col my-8">
+        <h1 className="text-5xl text-white font-montserrat">Posts & Portfolio</h1>
+        <hr className="w-full border-zinc-700 my-4 rounded-xl" />
+        <div className="w-1/3 flex flex-col mt-8">
           <div>
             {data?.portfolios?.map((item) => (
               <div key={item.slug}>
