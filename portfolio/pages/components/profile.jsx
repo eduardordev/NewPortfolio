@@ -15,7 +15,7 @@ export const Profile = () => {
         </h2>
         <hr className="w-full border-zinc-700 my-4 rounded-xl" />
         <p className="text-zinc-400 font-work-sans font-normal text-base text-justify ">
-          I am a web developer who loves design and programming. I love making ideas come true.
+          Frontend Web Developer in Zuntex Apparel
         </p>
       </div>
     </div>
